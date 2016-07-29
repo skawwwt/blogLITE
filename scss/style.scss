@@ -1,0 +1,25 @@
+@import 'https://fonts.googleapis.com/css?family=Source+Code+Pro';
+@import '_variables.scss';
+
+* {
+  font-family: 'Source Code Pro', monospace;
+}
+
+.navbar {
+  margin-bottom: 0;
+}
+
+#pagination {
+  text-align: center;
+  margin: 20px;
+}
+
+.well {
+  margin-bottom: 0;
+}
+
+.footer {
+    p {
+      padding-top:15px;
+    }
+  }
