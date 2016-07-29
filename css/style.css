@@ -3,7 +3,46 @@
   font-family: 'Source Code Pro', monospace; }
 
 .navbar {
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  background-color: #E74C3C;
+  border: none;
+  border-radius: 0; }
+
+.navbar-default .navbar-nav li a {
+  color: #ECF0F1; }
+  .navbar-default .navbar-nav li a:hover {
+    color: #C0392B; }
+.navbar-default .navbar-brand {
+  color: #ECF0F1; }
+  .navbar-default .navbar-brand:hover {
+    color: #C0392B; }
+.navbar-default .container {
+  border-bottom: 1px solid #ECF0F1; }
+
+.jumbotron {
+  background-color: #E74C3C; }
+  .jumbotron p {
+    color: #ECF0F1;
+    text-align: center; }
+  .jumbotron img {
+    margin: auto;
+    margin-bottom: 20px; }
+
+#blogExcerpt {
+  border-bottom: 1px solid #1ABC9C;
+  padding-bottom: 25px; }
+  #blogExcerpt h3 a {
+    color: #1ABC9C; }
+    #blogExcerpt h3 a:hover {
+      text-decoration: none;
+      color: #16A085; }
+  #blogExcerpt p {
+    text-align: justify; }
+  #blogExcerpt .btn-default {
+    border: 2px solid #E74C3C;
+    color: #E74C3C;
+    padding-left: 30px;
+    padding-right: 30px; }
 
 #pagination {
   text-align: center;
