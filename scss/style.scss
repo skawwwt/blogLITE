@@ -49,10 +49,11 @@
 }
 
 #blogExcerpt {
-  border-bottom: 1px solid $post-title;
+  border-bottom: 1px solid $header-text;
   padding-bottom: 25px;
   h3 {
     a {
+      font-weight: bold;
       color: $post-title;
       &:hover {
         text-decoration: none;
@@ -74,17 +75,62 @@
 
 }
 
+.sidebar {
+  background-color: $header-text;
+  padding-bottom: 20px;
+}
+
+.social-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  li {
+    display: inline;
+    a {
+      color: $large-section;
+      &:hover {
+        color: $header-hover;
+      }
+    }
+  }
+}
+
 #pagination {
   text-align: center;
   margin: 20px;
+  a {
+    color: $post-title;
+  }
 }
 
 .well {
   margin-bottom: 0;
+  background-color: $large-section;
+  a {
+    color: $header-text;
+    &:hover{
+      display: block;
+      color: $post-title;
+    }
+  }
 }
 
 .footer {
     p {
       padding-top:15px;
+      color: $header-text;
     }
+
   }
+
+.btn-primary {
+  background-color: $post-title;
+  border: none;
+  &:hover {
+    background-color: $post-title-hover;
+  }
+}
+
+#ack {
+  margin-top: 15px;
+}
