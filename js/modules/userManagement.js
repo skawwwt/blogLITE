@@ -1,12 +1,17 @@
 function checkStatus(){
   $.post('php/controller.php', {action: 'checkStatus'}, function(response){
     if(response == 1){
-      $('#options').html('User options will go here.');
+      $('#options').html('<a href="new_post.html" data-toggle="tooltip" data-placement="bottom" title="New Blog Post" href="#"><i class="fa fa-plus-square fa-4x" aria-hidden="true"></i></a>');
       $('#footerNav li:last').remove();
       $('#footerNav').append('<li><a href="#" id="logout">Logout</a></li>')
       $('#login').modal("hide");
     } else {
-      console.log('No active user sessions');
+      var pathname = window.location.href; // Returns path only
+      if(pathname == "http://localhost/myprojects/blogLite/new_post.html"){
+        window.location.replace('http://localhost/myprojects/blogLite/');
+      } else {
+        console.log("No user session.");
+      }
     }
   });
 }

@@ -5,6 +5,10 @@
   font-family: 'Source Code Pro', monospace;
 }
 
+body {
+  background-color: $bg-color;
+}
+
 .navbar {
   margin-bottom: 0;
   background-color: $large-section;
@@ -91,6 +95,16 @@
       &:hover {
         color: $header-hover;
       }
+    }
+  }
+}
+
+#options {
+  text-align: center;
+  a {
+    color: $header-text;
+    &:hover {
+      color: $post-title;
     }
   }
 }

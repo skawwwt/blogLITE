@@ -12,13 +12,13 @@
     <link href="css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="stylesheet" href="css/simplemde.min.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <script src="js/marked.js"></script>
   </head>
   <body>
     <nav class="navbar navbar-default">
@@ -49,32 +49,24 @@
         <img class="img-responsive" src="images/blogLiteLogo.png" />
         <p>Welcome to blogLITE</p>
         <p>A lightweight, no frills blogging platform. For writers to write.</p>
-        <div id="options">
-        </div>
       </div>
     </div>
     <div class="container">
       <div class="row">
-        <div class="col-md-8">
-          <div class="blogPostList">
-
-          </div>
-          <div id="pagination">
-            <a href="#">Next Page -></a>
+        <div class="col-md-12">
+          <h2>New blog post</h2>
+            <form id="newPost">
+              <label>Title:</label>
+              <input type="text" id="post_title" name="post_title" class="form-control" />
+              <label>Content:</label>
+              <textarea id="post_content" name="post_content"></textarea>
+              <div class="postBtnArea">
+                <button id="submitPost" class="pull-right btn btn-primary btn-lg">Publish</button>
+              </div>
+              <div id="ack"></div>
+            </form>
           </div>
         </div>
-        <div class="col-md-4 sidebar">
-          <h3>About Me</h3>
-          <p>In this area you can write about you, or someone else if you like, but that might be weird. Tell people who you are, what you do, your hobbies, whatever you want.</p>
-          <h3>Find me on: </h3>
-          <ul class="social-menu">
-            <li><a href="#"><i class="fa fa-facebook-official fa-3x"></i></a></li>
-            <li><a href="#"><i class="fa fa-twitter-square fa-3x"></i></a></li>
-            <li><a href="#"><i class="fa fa-instagram fa-3x"></i></a></li>
-            <li><a href="#"><i class="fa fa-github-square fa-3x"></a></i></li>
-          </ul>
-        </div>
-      </div>
     </div>
     <div class="row">
       <div class="well">
@@ -89,35 +81,9 @@
         </div>
       </div>
     </div>
-
-    <!-- modal for log in -->
-    <div id="login" class="modal fade" tabindex="-1" role="dialog">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title">Sign In</h4>
-          </div>
-          <div class="modal-body">
-            <form id="userLogin">
-              <label>Email address:</label>
-              <input type="email" name="email" id="email" class="form-control" placeholder="Email address..."/>
-              <label>Password:</label>
-              <input type="password" name="pword" id="pword" class="form-control" placeholder="Enter password..." />
-            </form>
-            <div id="ack"></div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-            <button id="loginSubmit" type="button" class="btn btn-primary">Login</button>
-          </div>
-        </div><!-- /.modal-content -->
-      </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
-
     <script src="js/jquery-3.1.0.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/home.js"></script>
+    <script src="js/newpost.js"></script>
   </body>
 </html>
