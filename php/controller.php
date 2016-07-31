@@ -19,7 +19,11 @@ if($action == "checkStatus"){
   $content = $connection->real_escape_string($_POST['content']);
   publish($connection, $title, $content);
 } else if ($action == "getPosts"){
-  getPosts($connection);
+  $start = $connection->real_escape_string($_POST['start']);
+  getPosts($connection, $start);
+} else if ($action == "singlePost"){
+  $postID = $connection->real_escape_string($_POST['postID']);
+  singlePost($connection, $postID);
 } else {
  echo "no action";
 }

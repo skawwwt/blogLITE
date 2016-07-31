@@ -11,8 +11,23 @@ function publish($connection, $title, $content){
   }
 }
 
-function getPosts($connection){
-  $sql = "SELECT * FROM posts ORDER BY published DESC";
+function getPosts($connection, $start){
+  $sql = "SELECT * FROM posts ORDER BY published DESC LIMIT $start, 3";
+  $result = mysqli_query($connection, $sql);
+   if($result->num_rows > 0){
+     $responseArray = array();
+     while($array = mysqli_fetch_assoc($result)){
+         $responseArray[] = $array;
+     }
+
+     echo json_encode($responseArray);
+    } else {
+     echo 0;
+   }
+}
+
+function singlePost($connection, $postID){
+  $sql = "SELECT * FROM posts WHERE pid = '$postID'";
   $result = mysqli_query($connection, $sql);
    if($result->num_rows > 0){
      $responseArray = array();

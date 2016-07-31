@@ -10,7 +10,6 @@ function checkStatus(){
   }
 }
 
-
 //checks email and password against database hash, login attempts etc, on success sets session variables
 function login($connection, $email, $pword){
   $sql = "SELECT * FROM users WHERE email = '$email'";
