@@ -10,6 +10,22 @@ function checkStatus(){
   }
 }
 
+function getUser($connection, $uid){
+  $sql = "SELECT firstname, lastname FROM users WHERE uid = '$uid'";
+  $result = mysqli_query($connection, $sql);
+  if($result->num_rows == 1){
+    $responseArray = array();
+    while($array = mysqli_fetch_assoc($result)){
+        $responseArray[] = $array;
+    }
+
+    echo json_encode($responseArray);
+  } else {
+    echo 0;
+  }
+
+}
+
 //checks email and password against database hash, login attempts etc, on success sets session variables
 function login($connection, $email, $pword){
   $sql = "SELECT * FROM users WHERE email = '$email'";

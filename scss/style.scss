@@ -103,6 +103,7 @@ body {
   text-align: center;
   a {
     color: $header-text;
+    padding: 5px;
     &:hover {
       color: $post-title;
     }
@@ -130,6 +131,13 @@ body {
     border-top: 1px solid #c1c1c1;
   }
 
+}
+
+#userOptions {
+  button {
+    margin-right: 3px;
+    margin-bottom: 10px;
+  }
 }
 
 .well {

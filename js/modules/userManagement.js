@@ -1,17 +1,31 @@
 function checkStatus(){
   $.post('php/controller.php', {action: 'checkStatus'}, function(response){
     if(response == 1){
-      $('#options').html('<a href="new_post.html" data-toggle="tooltip" data-placement="bottom" title="New Blog Post" href="#"><i class="fa fa-plus-square fa-4x" aria-hidden="true"></i></a>');
+      $('#options').html('<a href="new_post.html" data-toggle="tooltip" data-placement="bottom" title="New Blog Post" href="#"><i class="fa fa-pencil-square-o fa-4x" aria-hidden="true"></i></a><a href="drafts.html" data-toggle="tooltip" data-placement="bottom" title="My Drafts" href="#"><i class="fa fa-list fa-4x" aria-hidden="true"></i></a>');
       $('#footerNav li:last').remove();
-      $('#footerNav').append('<li><a href="#" id="logout">Logout</a></li>')
+      $('#footerNav').append('<li><a href="#" id="logout">Logout</a></li>');
       $('#login').modal("hide");
     } else {
-      var pathname = window.location.href; // Returns path only
-      if(pathname == "http://localhost/myprojects/blogLite/new_post.html"){
+      var pathname = window.location.href; // Returns url
+      if(pathname == "http://localhost/myprojects/blogLite/new_post.html" || pathname == "http://localhost/myprojects/blogLite/drafts.html"){
         window.location.replace('http://localhost/myprojects/blogLite/');
       } else {
         console.log("No user session.");
       }
+    }
+  });
+}
+
+function checkPostStatus(postID){
+  $.post('php/controller.php', {action: 'checkStatus'}, function(response){
+    if(response == 1){
+      $('#userOptions').append('<button id="'+ postID +'" class="pull-right btn btn-primary edit">Edit</button><button id="'+ postID +'" class="pull-right btn btn-danger delete">Delete</button>');
+      $('#footerNav li:last').remove();
+      $('#footerNav').append('<li><a href="#" id="logout">Logout</a></li>');
+      $('#login').modal("hide");
+    } else {
+      $('#contentEdit').html('');
+      return false;
     }
   });
 }

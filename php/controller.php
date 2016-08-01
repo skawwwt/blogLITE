@@ -24,6 +24,28 @@ if($action == "checkStatus"){
 } else if ($action == "singlePost"){
   $postID = $connection->real_escape_string($_POST['postID']);
   singlePost($connection, $postID);
+} else if ($action == 'getUser'){
+  $uid = $connection->real_escape_string($_POST['uid']);
+  getUser($connection, $uid);
+} else if ($action == 'postUpdate'){
+  $title = $connection->real_escape_string($_POST['title']);
+  $content = $connection->real_escape_string($_POST['content']);
+  $postID = $connection->real_escape_string($_POST['postID']);
+  postUpdate($connection, $title, $content, $postID);
+} else if ($action == 'postDelete'){
+  $postID = $connection->real_escape_string($_POST['postID']);
+  postDelete($connection, $postID);
+} else if ($action == 'newDraft'){
+  $title = $connection->real_escape_string($_POST['title']);
+  $content = $connection->real_escape_string($_POST['content']);
+  newDraft($connection, $title, $content);
+} else if ($action == "getDrafts"){
+  getDrafts($connection);
+} else if ($action == "saveDraft"){
+  $title = $connection->real_escape_string($_POST['title']);
+  $content = $connection->real_escape_string($_POST['content']);
+  $postID = $connection->real_escape_string($_POST['postID']);
+  saveDraft($connection, $title, $content, $postID);
 } else {
  echo "no action";
 }
